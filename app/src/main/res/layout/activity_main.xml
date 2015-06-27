@@ -1,0 +1,218 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TabHost
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/tabHost"
+            android:layout_gravity="start|center_vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/scrollCurrentRoute">
+
+                    <LinearLayout
+                        android:id="@+id/tabCurrentRoute"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:clickable="true">
+
+                        <TextView
+                            android:id="@+id/txtNfc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nfcTag" />
+
+                        <LinearLayout
+                            android:id="@+id/rowScore"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Score"
+                                android:id="@+id/txtTitleScore"
+                                android:layout_alignParentLeft="true"
+                                android:padding="10dp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/txtScore"
+                                android:textColor="#ffb1b1b1"
+                                android:layout_alignParentRight="true"
+                                android:padding="10dp"
+                                android:hint="3...12" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rowClimber"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Climber"
+                                android:id="@+id/txtTitleClimber"
+                                android:layout_alignParentLeft="true"
+                                android:padding="10dp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:hint="John"
+                                android:id="@+id/txtUser"
+                                android:textColor="#ffb1b1b1"
+                                android:layout_alignParentRight="true"
+                                android:padding="10dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rowId"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Climb ID"
+                                android:id="@+id/txtTitleClimbId"
+                                android:layout_alignParentLeft="true"
+                                android:padding="10dp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:hint="1231"
+                                android:id="@+id/txtClimbId"
+                                android:textColor="#ffb1b1b1"
+                                android:layout_alignParentRight="true"
+                                android:padding="10dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rowStart"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start Time"
+                                android:id="@+id/txtTitleStartTime"
+                                android:layout_alignParentLeft="true"
+                                android:padding="10dp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="datetime"
+                                android:id="@+id/txtStartTime"
+                                android:textColor="#ffb1b1b1"
+                                android:layout_alignParentRight="true"
+                                android:padding="10dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rowFinish"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Finish Time"
+                                android:id="@+id/txtTitleFinishTime"
+                                android:layout_alignParentLeft="true"
+                                android:padding="10dp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="datetime"
+                                android:id="@+id/txtFinishTime"
+                                android:textColor="#ffb1b1b1"
+                                android:layout_alignParentRight="true"
+                                android:padding="10dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rowButton"
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <Button
+                                style="?android:attr/buttonStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Time"
+                                android:id="@+id/buttonGetTime"
+                                android:padding="10dp"
+                                android:layout_alignParentLeft="true"
+                                android:enabled="true" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add Climb"
+                                android:id="@+id/buttonAddClimb"
+                                android:padding="10dp"
+                                android:layout_alignParentRight="true"
+                                android:enabled="true"
+                                android:width="150dp" />
+                            </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/tabUserHistory"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="History"
+                        android:id="@+id/textView"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"/>
+
+                    <ListView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/listHistory"
+                        android:fastScrollEnabled="true"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>
